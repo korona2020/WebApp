@@ -52,8 +52,7 @@ namespace WebApp
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-            //first erandi 123332
-            //kjhjgjhgjhgjhgjhh
+            //first erandi 1
         }
     }
 }
