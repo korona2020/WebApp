@@ -15,7 +15,7 @@ pipeline{
         }
 	stage('Restore packages') {
   	    steps {
-    		bat "dotnet restore ${workspace}\\C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\WebApp\\WebApp.sln"
+    		bat "dotnet restore C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\WebApp\WebApp.sln"
            }
         }    
     }
