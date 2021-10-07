@@ -5,7 +5,7 @@ pipeline{
 	    
 	stage ('Clean workspace') {
   	    steps {
-    		 cleanWs()
+    		cleanWs()
   	    }
          }
         stage("Git Checkout"){
