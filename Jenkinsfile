@@ -14,6 +14,11 @@ pipeline{
                 git branch: 'master', credentialsId: 'TestGit', url: 'https://github.com/korona2020/WebApp.git'
             }
         }
-	    
+	stage('Restore packages') {
+  		steps {
+    			bat "dotnet restore ${workspace}\\WebApp.sln"
+ 		      }
+        }   
+	 
     }
 }
