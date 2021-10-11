@@ -20,10 +20,10 @@ pipeline{
  		      }
         } 
 	 
-	 stage('Clean') {
-  steps {
-    bat "msbuild.exe ${workspace}\\WebApp.sln"  
-  }
-}
+	 stage('Build') {
+ 		steps {
+ 	 		bat "msbuild.exe C:\Users\Administrator\Desktop\test.bat"
+		 }
+	}
     }
 }
