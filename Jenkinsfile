@@ -20,11 +20,6 @@ pipeline{
  		      }
         } 
 	 
-	stage('Clean') {
-  		steps {
-    		${workspace}
- 		 }
-	}
 	
 	 
     }
