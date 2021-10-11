@@ -22,7 +22,7 @@ pipeline{
 	 
 	stage('Clean'){
     steps{
-        bat "dotnet clean WebApp.csproj"
+        bat "dotnet clean WebApp.sln"
      }
    }
 	
