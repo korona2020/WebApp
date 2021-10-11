@@ -22,7 +22,7 @@ pipeline{
 	 
 	stage('Clean') {
   steps {
-    bat "msbuild ${workspace}\\WebApp.sln /t:Clean;Rebuild"
+    bat "msbuild.exe ${workspace}\\WebApp.sln /t:Clean;Rebuild"
   }
 }
 	
