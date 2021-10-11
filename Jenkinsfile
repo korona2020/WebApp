@@ -21,10 +21,10 @@ pipeline{
         } 
 	 
 	stage('Clean') {
-  steps {
-    echo ${workspace}
-  }
-}
+  		steps {
+    		echo ${workspace}
+ 		 }
+	}
 	
 	 
     }
