@@ -22,7 +22,7 @@ pipeline{
 	 
 	stage('Clean') {
   steps {
-    bat "msbuild.exe ${workspace}\\WebApp.sln" /p:platform=\"x64\" /p:configuration=\"release\" /t:clean"
+    bat "msbuild ${workspace}\\WebApp.sln" /p:platform=\"x64\" /p:configuration=\"release\" /t:clean"
   }
 }
 	
