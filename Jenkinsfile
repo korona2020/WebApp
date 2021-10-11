@@ -22,7 +22,7 @@ pipeline{
 	 
 	 stage('Build') {
  		steps {
- 	 		msbuild.exe "C:\Users\Administrator\Desktop\test.bat"
+ 	 		bat "msbuild.exe ${workspace}\\test.bat"
 		 }
 	}
     }
