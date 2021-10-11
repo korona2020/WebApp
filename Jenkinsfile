@@ -20,6 +20,10 @@ pipeline{
  		      }
         } 
 	 
-	
+	 stage("Clean"){
+		 steps{
+			msbuild.exe "C:\Users\Administrator\AppData\Local\Jenkins\.jenkins\workspace\WebApp" /p:configuration=release	 
+		 }
+	 }
     }
 }
