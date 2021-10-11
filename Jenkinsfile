@@ -19,11 +19,7 @@ pipeline{
     			bat "dotnet restore ${workspace}\\WebApp.sln"
  		      }
         } 
-	stage('Clean') {
-	  	steps {
-    			bat "msbuild.exe ${workspace}\\WebApp.sln" /p:Configuration=Release /p:Platform="Any CPU"
-  		}
-	}
+	
 	
 	 
     }
