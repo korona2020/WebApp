@@ -1,6 +1,10 @@
 pipeline{
     agent any
-	
+    environment {
+    MSBUILD = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\"
+    CONFIG = 'Release'
+    PLATFORM = 'x64'
+  }
  stages{
 	    
 	stage ('Clean workspace') {
@@ -22,7 +26,7 @@ pipeline{
 	 
 	 stage('Build') {
  		steps {
- 	 		bat "msbuild.exe ${workspace}\\test.bat"
+ 	 		bat "\"${MSBUILD}\" WebApp.sln /p:Configuration=${env.CONFIG};Platform=${env.PLATFORM} /maxcpucount:%NUMBER_OF_PROCESSORS% /nodeReuse:false"
 		 }
 	}
     }
