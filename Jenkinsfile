@@ -20,10 +20,6 @@ pipeline{
  		      }
         } 
 	 
-	 stage('Build') {
- 		steps {
- 	 		
-		 }
-	}
+	 
     }
 }
