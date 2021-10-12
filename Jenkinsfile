@@ -1,6 +1,6 @@
 pipeline{
     agent any
-	
+   
  stages{
 	    
 	stage ('Clean workspace') {
@@ -19,7 +19,12 @@ pipeline{
     			bat "dotnet restore ${workspace}\\WebApp.sln"
  		      }
         } 
-	
+	stage('Clean')
+	 {
+		 steps{
+			 bat "dotnetClean configuration: 'Release', project: 'WebApp.sln', sdk: '.NET 5.0', workDirectory: 'C:\\Users\\Administrator\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\WebApp'"
+		 }
+	 }
 	 
     }
 }
