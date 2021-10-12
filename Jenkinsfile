@@ -22,8 +22,8 @@ pipeline{
 	stage('Build') {
       steps {
         script {
-          def msbuild = tool name: 'MSBuild', type: 'hudson.plugins.msbuild.MsBuildInstallation'
-          bat "${msbuild} WebApp.sln"
+          def msbuild = tool name: 'MSBuild'
+          bat "${msbuild} C:\Users\Administrator\AppData\Local\Jenkins\.jenkins\workspace\WebApp\WebApp.sln"
         } 
       } 
     } 
