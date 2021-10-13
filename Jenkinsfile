@@ -34,6 +34,19 @@ pipeline{
     			dotnetTest configuration: 'Release', project: 'WebApp.sln', sdk: '.NET 5.0', workDirectory: 'C:\\Users\\Administrator\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\WebApp'
  		      }
        } 
+       stage('Build + SonarQube analysis') {
+           steps{
+               def sqScannerMsBuildHome = tool 'Scanner for MSBuild 4.6'
+            withSonarQubeEnv('sq1') {
+            bat "${sqScannerMsBuildHome}\\SonarQube.Scanner.MSBuild.exe begin /k:myKey"
+            bat 'MSBuild.exe /t:Rebuild'
+            bat "${sqScannerMsBuildHome}\\SonarQube.Scanner.MSBuild.exe end"
+           }
+            
+    }
+  } 
+        
+        
     }
     
 }
