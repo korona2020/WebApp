@@ -37,12 +37,13 @@ pipeline{
        
         stage('Build + SonarQube analysis') {
             steps{
-                 def sqScannerMsBuildHome = tool 'sq1'
-                 withSonarQubeEnv('sq1') {
-                 bat "${sqScannerMsBuildHome}\\SonarQube.Scanner.MSBuild.exe begin /k:jenkins-sonar"
-                 bat 'MSBuild.exe /t:Rebuild'
-                 bat "${sqScannerMsBuildHome}\\SonarQube.Scanner.MSBuild.exe end"
-                }
+                 def msbuildHome = tool 'MSBuild'
+                 def scannerHome = tool 'SonarScanner for MSBuild'
+                 withSonarQubeEnv() {
+                 bat "\"${scannerHome}\\SonarScanner.MSBuild.exe\" begin /k:\"test\""
+                 bat "\"${msbuildHome}\\MSBuild.exe\" /t:Rebuild"
+                 bat "\"${scannerHome}\\SonarScanner.MSBuild.exe\" end"
+                    }
             }
         }
        
