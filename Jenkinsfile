@@ -42,9 +42,7 @@ pipeline{
             bat 'MSBuild.exe /t:Rebuild'
             bat "${sqScannerMsBuildHome}\\SonarQube.Scanner.MSBuild.exe end"
            }
-            
-    }
-  } 
+      } 
         
         
     }
