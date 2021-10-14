@@ -21,5 +21,9 @@ namespace WebAppTest
         {
             return x + y;
         }
+        public void Kot()
+        {
+
+        }
     }
 }
