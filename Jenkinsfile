@@ -42,7 +42,7 @@ pipeline{
             }
             steps{
                         
-                            withSonarQubeEnv('sq1') {
+                           withSonarQubeEnv('sq1') {
                                    bat "\"${scannerHome}\\SonarScanner.MSBuild.exe\" begin /k:\"test\""
                                    bat "\"${msbuildHome}\\MSBuild.exe\" /t:Rebuild"
                                    bat "\"${scannerHome}\\SonarScanner.MSBuild.exe\" end"
