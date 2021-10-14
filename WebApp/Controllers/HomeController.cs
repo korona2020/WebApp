@@ -30,7 +30,7 @@ namespace WebApp.Controllers
         }
         public void Kot()
         {
-            DebuggerStep d;
+           
         }
     }
 }
