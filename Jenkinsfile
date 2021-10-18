@@ -13,6 +13,8 @@ pipeline{
                 git branch: 'master', credentialsId: 'GitRepo', url: 'https://github.com/korona2020/WebApp.git'
             }
         }
+        
+            
             
         }
     }
