@@ -15,7 +15,11 @@ pipeline{
                         }
              }
         
-        
+             stage('Restore packages') {
+  		            steps {
+    			            bat "dotnet restore ${workspace}\\WebApp.sln"
+ 		                 }
+             } 
         
         
           }
