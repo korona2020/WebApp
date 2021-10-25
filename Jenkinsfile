@@ -24,7 +24,7 @@ pipeline{
  		                 }
              } 
         
-             stage('Clean') {
+             stage('Clean SLN') {
   		            steps {
     			            dotnetClean configuration: 'Release', project: 'WebApp.sln', sdk: '.NET 5.0', workDirectory: 'C:\\Users\\Administrator\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\WebApp'
  		                 }
