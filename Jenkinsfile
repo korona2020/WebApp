@@ -24,11 +24,11 @@ pipeline{
  		                 }
              } 
         
-             stage('Clean SLN') {
-                    steps {
-                             bat "MSBuild.exe ${workspace}\\WebApp.sln" /nologo /nr:false /p:platform=\"x64\" /p:configuration=\"release\" /t:clean"
-                          }
-            }
+             stage('Clean') {
+  		            steps {
+    			            dotnetClean configuration: 'Release', project: 'WebApp.sln', sdk: '.NET 5.0', workDirectory: 'C:\\Users\\Administrator\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\WebApp'
+ 		                 }
+             } 
         
         
           }
