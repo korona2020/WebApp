@@ -21,6 +21,8 @@ namespace WebAppTest
         {
             return x + y;
         }
+
+        [Fact]
         public void Kot()
         {
 
