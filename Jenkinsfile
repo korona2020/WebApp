@@ -21,8 +21,17 @@ pipeline{
  		                 }
              } 
         
-             
-        
+              stage('Clean') {
+  	            	steps {
+    			              dotnetClean configuration: 'Release', project: 'WebApp.sln', sdk: '.NET 5.0',  workDirectory: 'C:\\Users\\Administrator\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\WebApp'  
+    			              //unstable(message: "${STAGE_NAME} is unstable")
+ 		                  }
+             } 
+             stage('Build') {
+  	            	steps {
+                            dotnetBuild configuration: 'Release', force: true, project: 'WebApp.sln', sdk: '.NET 5.0', workDirectory: 'C:\\Users\\Administrator\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\WebApp'
+ 		                  }
+             }  
         
           }
     }
