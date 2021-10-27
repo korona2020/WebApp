@@ -29,8 +29,11 @@ pipeline{
              } 
              stage('Build') {
   	            	steps {
-                            dotnetBuild configuration: 'Release', force: true, project: 'WebApp.sln', sdk: '.NET 5.0',unstableIfWarnings: true, workDirectory: 'C:\\Users\\Administrator\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\WebApp'
- 		                  }
+                            dotnetBuild configuration: 'Release', force: true, project: 'WebApp.sln', sdk: '.NET 5.0', workDirectory: 'C:\\Users\\Administrator\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\WebApp'
+ 		                    warnError(catchInterruptions: false, message: 'Unstable') {
+                                        // some block
+                            }
+                    }
              }  
         
           }
